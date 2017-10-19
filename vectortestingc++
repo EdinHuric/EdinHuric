@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <ctype.h>
+
+int main() {
+    std::vector<int> testVector;
+    int input;
+    char ans;
+    while(ans != 'n'){
+        std::cout<< "Enter a number between 1 & 50 into the Vector! \n";
+        std::cin >> input;
+        if(input >= 1 && input <= 50){
+        testVector.push_back(input);
+    }else{
+        std::cout << "That number is out of bounds!" << std::endl;
+    }
+        std::cout << "Would you like to enter another number? (Y/N) \n";
+        std::cin >> ans;
+        ans = tolower(ans);
+    }
+    std::cout << "The vector contains: ";
+    for(int i=0; i < testVector.size(); i++){
+    std::cout << testVector[i] << "  ";
+    }
+    
+}
